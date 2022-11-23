@@ -41,7 +41,7 @@ movieRoutes.route("/movie/:id").get((req, res) => {
 movieRoutes.route("/search").get( async (req, res) => {
   let db_connect = dbo.getDb("movie");
   try {
-      let result = await db_connect.collection("movies").aggregate([
+      let result = await db_connect.collection("movie").aggregate([
           {
               "$search": {
                   "index": "default",
